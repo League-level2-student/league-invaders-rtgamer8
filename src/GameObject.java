@@ -6,6 +6,9 @@ public class GameObject {
 	 int height;
 	 int speed = 0;
 	 boolean isActive = true;
+	 
+	 
+	 
 	 GameObject(int x, int y, int width, int height){
 		this.x = x;
 		this.y = y;
@@ -17,17 +20,5 @@ public class GameObject {
 		 
 	 }
 	 
-public static void main(String[] args) {
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-}
+
 }
