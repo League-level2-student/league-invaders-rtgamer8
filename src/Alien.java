@@ -14,10 +14,11 @@ public class Alien extends GameObject {
 
 	}
 
-	void draw() {
+
 	//	g.fillRect(x, y, width, height);
 	void draw(Graphics g) {
 	        g.fillRect(x, y, width, height);
 	}
+
 
 }

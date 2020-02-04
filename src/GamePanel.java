@@ -15,6 +15,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	final int GAME = 1;
 	final int END = 2;
 	Rocketship ship = new Rocketship(250, 700, 50, 50);
+	ObjectManager manager = new ObjectManager(ship);
 	int currentState = MENU;
 	Font titleFont;
 
@@ -106,7 +107,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
-
+ 
 		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 			System.out.println("DOWN");
 
