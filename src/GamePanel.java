@@ -77,7 +77,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	}
 
 	void updateGameState() {
-		//call to thw object managers update mehtod
+		// call to thw object managers update mehtod
 	}
 
 	void updateEndState() {
@@ -107,7 +107,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
- 
+
 		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 			System.out.println("DOWN");
 
@@ -147,5 +147,3 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	}
 
 }
-
-

@@ -21,4 +21,17 @@ public class projectile extends GameObject {
 		g.fillRect(x, y, width, height);
 	}
 
+	public static int size() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public static ObjectManager get(int j) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+
 }
