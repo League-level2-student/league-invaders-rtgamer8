@@ -17,7 +17,8 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	final int END = 2;
 	public static BufferedImage image;
 	public static boolean needImage = true;
-	public static boolean gotImage = false;	
+	public static boolean gotImage = false;
+	Timer alienspawn;
 	Rocketship ship = new Rocketship(250, 700, 50, 50);
 	ObjectManager manager = new ObjectManager(ship);
 	int currentState = MENU;
@@ -28,8 +29,20 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		Timer frameDraw = new Timer(1000 / 60, this);
 		frameDraw.start();
 
-				    loadImage ("space.png");
-		
+		loadImage("space.png");
+
+	}
+
+	void startGame() {
+
+		alienspawn = new Timer(1000, manager);
+		alienspawn.start();
+
+	}
+
+	void endgame() {
+
+		alienspawn.stop();
 	}
 
 	void drawMenuState(Graphics g) {
@@ -54,11 +67,9 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		} else {
 			g.setColor(Color.BLUE);
 			g.fillRect(0, 0, LeagueInvaders.WIDTH, LeagueInvaders.HEIGHT);
-		
+
 		}
 		ship.draw(g);
-		
-		
 
 	}
 
@@ -90,13 +101,6 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	}
 
 	void updateGameState() {
-	
-		
-		
-		
-		
-		
-		
 
 	}
 
@@ -154,22 +158,31 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 			if (currentState == END) {
 				currentState = MENU;
 			} else {
+
 				currentState++;
+				if (currentState == END) {
+					endgame();
+				}
 			}
+
 		}
 
+		startGame();
+		if (e.getKeyCode() == KeyEvent.VK_SPACE && currentState == GAME) {
+			manager.addProjectile(ship.getProjectile());
+		}
 	}
 
 	void loadImage(String imageFile) {
-	    if (needImage) {
-	        try {
-	            image = ImageIO.read(this.getClass().getResourceAsStream(imageFile));
-		    gotImage = true;
-	        } catch (Exception e) {
-	            
-	        }
-	        needImage = false;
-	    }
+		if (needImage) {
+			try {
+				image = ImageIO.read(this.getClass().getResourceAsStream(imageFile));
+				gotImage = true;
+			} catch (Exception e) {
+
+			}
+			needImage = false;
+		}
 	}
 
 	@Override

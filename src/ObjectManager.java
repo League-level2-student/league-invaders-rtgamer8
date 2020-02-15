@@ -18,7 +18,7 @@ public class ObjectManager implements ActionListener
 
 	}
 
-	void addProjectile() {
+	void addProjectile(projectile p) {
 
 	}
 
