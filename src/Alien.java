@@ -13,17 +13,17 @@ public class Alien extends GameObject {
 		// TODO Auto-generated constructor stub
 	super.speed=1;
 	if (needImage) {
-	    loadImage ("rocket.png");
+	    loadImage ("alien.png");
 	}
 	}
 
 	void update() {
-
+		y+=speed;
 	}
 
 
 	void draw(Graphics g) {
-	        g.fillRect(x, y, width, height);
+	      
 	        
 	        
 	        

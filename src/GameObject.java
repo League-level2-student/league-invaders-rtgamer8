@@ -14,9 +14,22 @@ public class GameObject {
 		this.height = height;
 	}
 
-	void update() {
+void update() {
+	              
+	
 
-	}
-
+	
+	                
 }
-collisionBox.setBounds(x, y, width, height);
+}
+
+
+
+
+
+
+
+
+
+
+

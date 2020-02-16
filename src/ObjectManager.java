@@ -11,6 +11,7 @@ public class ObjectManager implements ActionListener
 	ArrayList<projectile> projectiles = new ArrayList<projectile>();
 	ArrayList<Alien> aliens = new ArrayList<Alien>();
 	Random random = new Random();
+	int score = 0;
 
 	ObjectManager(Rocketship rocket) {
 
@@ -85,5 +86,6 @@ public class ObjectManager implements ActionListener
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		addAlien();
+		System.out.println(aliens.size());
 	}
 }
