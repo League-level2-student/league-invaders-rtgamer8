@@ -5,6 +5,7 @@ public class GameObject {
 	int width;
 	int height;
 	int speed = 10;
+	
 	boolean isActive = true;
 
 	GameObject(int x, int y, int width, int height) {
@@ -16,11 +17,13 @@ public class GameObject {
 
 void update() {
 	              
-	
 
 	
 	                
 }
+void collisionBox(int x, int y, int width, int height) {
+	
+}    
 }
 
 

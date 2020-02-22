@@ -20,7 +20,7 @@ public class ObjectManager implements ActionListener
 	}
 
 	void addProjectile(projectile p) {
-
+projectiles.add(p);
 	}
 
 	void addAlien() {
@@ -82,6 +82,12 @@ public class ObjectManager implements ActionListener
 
 	}
 
+ void checkCollision() {
+	 
+ }
+	
+	
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub

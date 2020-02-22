@@ -71,7 +71,6 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		}
 		ship.draw(g);
 		manager.draw(g);
-		
 
 	}
 
@@ -103,7 +102,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	}
 
 	void updateGameState() {
-manager.update();
+		manager.update();
 	}
 
 	void updateEndState() {
@@ -158,23 +157,25 @@ manager.update();
 
 		if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 			if (currentState == END) {
+				endgame();
 				currentState = MENU;
-				
 			} else {
-				startGame();
 				currentState++;
-				if (currentState == END) {
-					endgame();
-					
-				}
-			}
 		
-		}
 
-	
-		if (e.getKeyCode() == KeyEvent.VK_SPACE && currentState == GAME) {
-			manager.addProjectile(ship.getProjectile());
+			}
+			if (currentState == GAME) {
+				startGame();
+				
+			}
+
 		}
+		
+		if(e.getKeyCode() == KeyEvent.VK_SPACE && currentState == GAME) {
+			manager.addProjectile(ship.getProjectile());
+			System.out.println("space" + currentState);
+		}
+		
 	}
 
 	void loadImage(String imageFile) {
