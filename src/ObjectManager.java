@@ -41,6 +41,12 @@ projectiles.add(p);
 
 		}
 
+		
+		
+		checkCollision();
+		purgeObjects();
+		
+		
 	}
 
 	void draw(Graphics g) {
@@ -82,12 +88,29 @@ projectiles.add(p);
 
 	}
 
- void checkCollision() {
-	 
- }
+void checkCollision() {
+	for (int i = 0; i < aliens.size(); i++) {
+		
+		for (int j = 0; j < projectiles.size(); j++) {
+			
+	if(aliens.get(i).collisionBox.intersects(projectiles.get(j).collisionBox)){
+		aliens.get(i).isActive=false;
+		projectiles.get(j).isActive=false;
+	}
+		}
+		
+		if (ship.collisionBox.intersects(aliens.get(i).collisionBox)) {
+			
+			ship.isActive=false;
+	}
 	
 	
 	
+		
+	}
+	
+	
+}
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
@@ -95,3 +118,5 @@ projectiles.add(p);
 		System.out.println(aliens.size());
 	}
 }
+
+
