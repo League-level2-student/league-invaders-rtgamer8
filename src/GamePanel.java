@@ -29,7 +29,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		Timer frameDraw = new Timer(1000 / 60, this);
 		frameDraw.start();
 
-		loadImage("space.png");
+		loadImage("wallpaper.png");
 
 	}
 

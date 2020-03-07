@@ -14,7 +14,7 @@ public class projectile extends GameObject {
 	
 		super.speed = 10;
 		if (needImage) {
-		    loadImage ("bullet.png");
+		    loadImage ("shell.png");
 		}
 	}
 

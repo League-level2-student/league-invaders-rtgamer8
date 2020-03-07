@@ -12,11 +12,11 @@ public class Rocketship extends GameObject {
 		super(x, y, width, height);
 		// TODO Auto-generated constructor stub
 		if (needImage) {
-		    loadImage ("rocket.png");
+		    loadImage ("mario.png");
 		}
 		
 		if (needImage) {
-		    loadImage ("space.png");
+		    loadImage ("wallpaper.png");
 		}
 
 	}

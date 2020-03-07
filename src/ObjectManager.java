@@ -109,8 +109,14 @@ void checkCollision() {
 		
 	}
 	
-	
+	score=+1;
 }
+
+int getscore() {
+	return score;
+}
+
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
