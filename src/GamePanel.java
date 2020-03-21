@@ -59,6 +59,8 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		g.setFont(titleFont);
 		g.setColor(Color.YELLOW);
 		g.drawString("Press Space for Instructions", 78, 700);
+		
+		
 	}
 
 	void drawGameState(Graphics g) {
@@ -69,9 +71,12 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 			g.fillRect(0, 0, LeagueInvaders.WIDTH, LeagueInvaders.HEIGHT);
 
 		}
+		
 		ship.draw(g);
 		manager.draw(g);
-
+		g.setFont(titleFont);
+		g.setColor(Color.GREEN);
+		g.drawString(manager.getscore()+ "", 78, 700);
 	}
 
 	void drawEndState(Graphics g) {
@@ -158,6 +163,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 			if (currentState == END) {
 				endgame();
+				ship= new Rocketship(250, 700, 50, 50);
 				currentState = MENU;
 			} else {
 				currentState++;
