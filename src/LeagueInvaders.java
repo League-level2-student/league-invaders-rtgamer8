@@ -22,7 +22,7 @@ public class LeagueInvaders {
 		LeagueInvaders league = new LeagueInvaders();
 
 		league.setup();
-
+	
 	}
 
 	public void setup() {

@@ -24,7 +24,7 @@ public class projectile extends GameObject {
 		super.update();
 	}
 
-	
+	 
 	void draw(Graphics g) {
 		g.setColor(Color.RED);
 		g.fillRect(x, y, width, height);

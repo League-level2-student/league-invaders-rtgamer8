@@ -41,7 +41,7 @@ projectiles.add(p);
 
 		}
 
-		
+		ship.update();
 		
 		checkCollision();
 		purgeObjects();
@@ -96,11 +96,12 @@ void checkCollision() {
 	if(aliens.get(i).collisionBox.intersects(projectiles.get(j).collisionBox)){
 		aliens.get(i).isActive=false;
 		projectiles.get(j).isActive=false;
+		score+=1;
 	}
 		}
 		
 		if (ship.collisionBox.intersects(aliens.get(i).collisionBox)) {
-			
+			System.out.println("ship");
 			ship.isActive=false;
 	}
 	
@@ -109,7 +110,7 @@ void checkCollision() {
 		
 	}
 	
-	score=+1;
+	
 }
 
 int getscore() {
