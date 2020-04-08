@@ -34,6 +34,7 @@ public class projectile extends GameObject {
 			g.setColor(Color.BLUE);
 			g.fillRect(x, y, width, height);
 		}
+		super.draw(g);
 	}
 
 	public static int size() {

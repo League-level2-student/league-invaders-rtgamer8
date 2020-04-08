@@ -34,6 +34,7 @@ public class Alien extends GameObject {
 	        	g.setColor(Color.BLUE);
 	        	g.fillRect(x, y, width, height);
 	        }
+	        super.draw(g);
 	}
 
 	void loadImage(String imageFile) {

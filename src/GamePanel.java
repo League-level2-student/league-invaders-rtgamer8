@@ -76,7 +76,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		manager.draw(g);
 		g.setFont(titleFont);
 		g.setColor(Color.GREEN);
-		g.drawString(manager.getscore()+ "", 78, 700);
+		g.drawString(manager.getScore()+ "", 78, 700);
 	}
 
 	void drawEndState(Graphics g) {
@@ -85,7 +85,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		g.setFont(titleFont);
 		g.setColor(Color.YELLOW);
 		g.drawString("Game Over", 78, 100);
-		g.drawString("You killed  enemies", 78, 400);
+		g.drawString("You killed " +manager.getScore()+  " enemies", 78, 400);
 		g.drawString("Press Enter to restart", 78, 700);
 
 	}
@@ -108,6 +108,9 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
 	void updateGameState() {
 		manager.update();
+		if(!ship.isActive) {
+			currentState = END;
+		}
 	}
 
 	void updateEndState() {

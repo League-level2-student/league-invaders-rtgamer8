@@ -91,6 +91,12 @@ projectiles.add(p);
 void checkCollision() {
 	for (int i = 0; i < aliens.size(); i++) {
 		
+		if (ship.collisionBox.intersects(aliens.get(i).collisionBox)) {
+			System.out.println("ship");
+			ship.isActive=false;
+			break;
+	}
+		
 		for (int j = 0; j < projectiles.size(); j++) {
 			
 	if(aliens.get(i).collisionBox.intersects(projectiles.get(j).collisionBox)){
@@ -100,10 +106,7 @@ void checkCollision() {
 	}
 		}
 		
-		if (ship.collisionBox.intersects(aliens.get(i).collisionBox)) {
-			System.out.println("ship");
-			ship.isActive=false;
-	}
+		
 	
 	
 	
@@ -113,7 +116,7 @@ void checkCollision() {
 	
 }
 
-int getscore() {
+int getScore() {
 	return score;
 }
 
